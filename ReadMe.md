@@ -10,12 +10,12 @@
 >   * "/Hello" : its just return hello 
 >   * "/capitalize/hello" : it return an HTML page with all uppercase , and it recive a paremeter and convert it to uppercase.
 
-  * "/album" : retrive three of album contains :
+  * "/albumModel" : retrive three of albumModel contains :
 
-    * the artist of the album
-    * the title of the album
+    * the artist of the albumModel
+    * the title of the albumModel
     * how many song in it
-    * how much long this album
+    * how much long this albumModel
     
 //////////////////////
 # Now you can succesfully add to the database 

@@ -1,4 +1,4 @@
-package com.friendship.songr;
+package com.friendship.songr.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

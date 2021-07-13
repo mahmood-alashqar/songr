@@ -22,7 +22,7 @@
     <div class="container">
         <a class="navbar-brand" href="/">SONGR</a>
         <a class="navbar-brand" href="/capitalize/hello">Capitalize</a>
-        <a class="navbar-brand" href="/album">Album</a>
+        <a class="navbar-brand" href="/albumModel">Album</a>
     </div>
 </nav>
 <!-- Image Showcases-->
@@ -30,39 +30,38 @@
   <div class="container-fluid p-0">
       <div th:each="album : ${albums}">
     <div class="row g-0">
-      <div class="col-lg-6 order-lg-2 text-white showcase-img" > <img th:src="${album.imageUrl}" alt=""/> </div>
+      <div class="col-lg-6 order-lg-2 text-white showcase-img" > <img th:src="${album.image_url}" alt=""/> </div>
       <div class="col-lg-6 order-lg-1 my-auto showcase-text">
         <h2 th:text="${album.title}"></h2>
           <h3 th:text="${album.artist}"></h3>
-        <p class="lead mb-0" th:text=" 'No. Of Songs are :' + ${album.songCount} "> </p>
+        <p class="lead mb-0" th:text=" 'No. Of Songs are :' + ${album.song_count} "> </p>
           <p class="lead mb-0" th:text=" 'Duration  :' + ${album.Length} "> </p>
 <br>
-
-          <form action="#" th:action="@{/album-basic}" th:object="${album}" method="post" >
-<!--              <p>artist:<input type="text" th:field="*{album.artist}"/></p>-->
-
-              <label>Title:</label>
-              <input type="text" name="title" placeholder="" required />
-              <br>
-              <label>Artist:</label>
-              <input type="text" name="artist"  placeholder="" required />
-              <br>
-              <label>Song Count:</label>
-              <input type="number" name="songCount"  placeholder="" required />
-              <br>
-              <label>Length:</label>
-              <input type="text" name="length"  placeholder="" required />
-              <br>
-              <label>Image URL:</label>
-              <input type="text" name="imageUrl"  placeholder="" required />
-
-            <input type="submit" value="submit"/>
-
-          </form>
 
       </div>
       </div>
     </div>
+      <form action="#" th:action="@{/album}" th:object="${albums}" method="post" >
+          <!--              <p>artist:<input type="text" th:field="*{albumModel.artist}"/></p>-->
+
+          <label>Title:</label>
+          <input type="text" name="title" placeholder="" required />
+          <br>
+          <label>Image Url:</label>
+          <input type="text" name="image_url"  placeholder="" required />
+          <br>
+          <label>Duration:</label>
+          <input type="text" name="length"  placeholder="" required />
+          <br>
+          <label>Song Count:</label>
+          <input type="text" name="song_count"  placeholder="" required />
+          <br>
+          <label>Artist:</label>
+          <input type="text" name="artist"  placeholder="" required />
+
+          <input type="submit" value="submit"/>
+
+      </form>
 <!-- -->
     </div>
   </div>
